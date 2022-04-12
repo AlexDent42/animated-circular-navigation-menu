@@ -8,6 +8,7 @@
     --white-color:#fff;
     --gradient-dark:#8460ed;
     --gradient-light:#ff1252;
+    --menu-background:#0f0;
 }
 
 body {
@@ -16,4 +17,35 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(45deg, var(--gradient-dark), var(--gradient-light));
+}
+
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background: var(--menu-background);
+}
+
+.menu li {
+    list-style:none;
+    position: absolute;
+}
+
+.toggle {
+    position:absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:  1000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow:0 3px 4px rgba(0,0,0,0.15);
+    font-size: 2em;
+
 }
