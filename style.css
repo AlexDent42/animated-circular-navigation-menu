@@ -1,0 +1,19 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root {
+    --white-color:#fff;
+    --gradient-dark:#8460ed;
+    --gradient-light:#ff1252;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, var(--gradient-dark), var(--gradient-light));
+}
