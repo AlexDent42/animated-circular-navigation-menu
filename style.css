@@ -9,6 +9,7 @@
     --gradient-dark:#8460ed;
     --gradient-light:#ff1252;
     --menu-background:#0f0;
+    --icon-color:#111;
 }
 
 body {
@@ -26,12 +27,40 @@ body {
     align-items: center;
     width: 200px;
     height: 200px;
-    background: var(--menu-background);
+    /* background: var(--menu-background); */
 }
 
 .menu li {
     list-style:none;
     position: absolute;
+    transform-origin:100px;
+    transition: 0.5s;
+    transition-delay:calc(0.1s*var(--i));
+    transform: rotate(0deg) translateX(80px);
+    
+    left: 0;
+}
+
+.menu.active li {
+    transform: rotate(calc(360deg/8*var(--i)));
+}
+
+.menu li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: var(--white-color);
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -8 *var(--i)));
+    box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+    color: var(--icon-color);
+    transition: 0.5s;
+}
+
+.menu li a:hover {
+    color: var(--gradient-light);
 }
 
 .toggle {
@@ -45,7 +74,12 @@ body {
     z-index:  1000;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow:0 3px 4px rgba(0,0,0,0.15);
+    box-shadow:0 0 4px rgba(0,0,0,0.15);
     font-size: 2em;
+    transition: transform 1.25s;
 
+}
+
+.menu.active .toggle {
+    transform: rotate(315deg);
 }
